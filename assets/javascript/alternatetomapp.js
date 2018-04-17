@@ -75,33 +75,6 @@ var q8 = {
 }
 
 
-
-// player hits start
-// a question pops up 
-// below the question are answer options
-// each question is timed for 30 seconds
-// each option needs to have the abiity to click on it
-// record user guess/click
-// if user guess equals correct answer, then show "correct" and answer, image
-// if not correct answer, show not correct, correct answer, image
-// correct answer is displayed for 10 seconds
-// when time is up, move on to next question
-// need to use setInterval, timer, slideshow
-// start game using slideshow activity
-// pop up quesiton using slide show activity
-// timer on each question using simple timer activity
-// look at crystal collector for recording answer
-// when answer clicked, have correct answer put into div
-// user clicks submit when they are done selecting
-// use if/else for correct/not correct
-// use simple timer activity for tmer on answer display
-
-
-
-
-// when the user clicks the start button the game starts
-// $("#start").on("click", playTrivia);
-
 var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
     //click events
     $("#start").on("click", run);

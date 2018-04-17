@@ -2,7 +2,7 @@ $(document).ready(function() {
     $("#theForm").hide();
     $("#result-page").hide();
     
-    var number = 60;
+    var number = 50;
     var intervalId;
     var right = 0;
     var wrong = 0;
@@ -10,71 +10,64 @@ $(document).ready(function() {
 
 
 // questions/answers
-var q1 = {
-    q: "Chicago has 77 neighborhoods.",
-    answerChoices: ["True", "False"],
-    correct: "True",
-    name: "question1",
-    image: "assets/images/aerialview.jpg"
+var question1 = {
+    question: "Chicago has 77 neighborhoods.",
+    answerOptions: ["True", "False"],
+    correctAnswer: "True",
+    name: "q1"
 };
 
-var q2 = {
-    q: "Which of the following colors is not one of the El train lines?",
-    answerChoices: ["Purple", "Green", "Red", "White"],
-    correct: "White",
-    name: "question2",
-    image: "assets/images/brownline.jpg"
+var question2 = {
+    question: "Which of the following colors is not one of the El train lines?",
+    answerOptions: ["Purple", "Green", "Red", "White"],
+    correctAnswer: "White",
+    name: "q2"
 }
 
-var q3 = {
-    q: "Northwestern University is located in which Chicago suburb?",
-    answerChoices: ["Evanston", "Wilmette", "Skokie", "Mt Prospect"],
-    correct: "Evanston",
-    name: "question3",
-    image: "assets/images/northwestern.jpg"
+var question3 = {
+    question: "Northwestern University is located in which Chicago suburb?",
+    answerOptions: ["Evanston", "Wilmette", "Skokie", "Mt Prospect"],
+    correctAnswer: "Evanston",
+    name: "q3"
 }
 
-var q4 = {
-    q: "The Cloud Gate statue in downtown Chicago is nicknamed The Bean.",
-    answerChoices: ["True", "False"],
-    correct: "True",
-    name: "question4",
-    image: "assets/images/the-bean.jpg"
+var question4 = {
+    question: "The Cloud Gate statue in downtown Chicago is nicknamed The Bean.",
+    answerOptions: ["True", "False"],
+    correctAnswer: "True",
+    name: "q4"
 }
 
-var q5 = {
-    q: "What is the tallest building in Chicago?",
-    answerChoices: ["Hancock Tower", "Willis Tower, aka Sears Tower", "Aqua Tower", "Trump Tower"],
-    correct: "Willis Tower, aka Sears Tower",
-    name: "question5",
-    image: "assets/images/skyline.jpg"
+var question5 = {
+    question: "What is the tallest building in Chicago?",
+    answerOptions: ["Hancock Tower", "Willis Tower, aka Sears Tower", "Aqua Tower", "Trump Tower"],
+    correctAnswer: "Willis Tower, aka Sears Tower",
+    name: "q5"
 }
 
-var q6 = {
-    q: "Chicago is located along Lake Superior.",
-    answerChoices: ["True", "False"],
-    correct: "False",
-    name: "question6",
-    image: "assets/images/alongthelake.jpg"
+var question6 = {
+    question: "Chicago is located along Lake Superior.",
+    answerOptions: ["True", "False"],
+    correctAnswer: "False",
+    name: "q6"
 }
 
-var q7 = {
-    q: "Lincoln Park Zoo is one of the few free-admission zoos in the United States.",
-    answerChoices: ["True", "False"],
-    correct: "True",
-    name: "question7",
-    image: "assets/images/lincolnparkzoo.jpg"
+var question7 = {
+    question: "Lincoln Park Zoo is one of the few free-admission zoos in the United States.",
+    answerOptions: ["True", "False"],
+    correctAnswer: "True",
+    name: "q7"
 }
 
-var q8 = {
-    q: "Former President Barack Obama lived in which Chicago neighborhood?",
-    answerChoices: ["Rogers Park", "Hyde Park", "Jefferson Park", "Logan Square"],
-    correct: "Hyde Park",
-    name: "question8",
-    image: "assets/images/obamashouse.jpg"
+var question8 = {
+    question: "Former President Barack Obama lived in which Chicago neighborhood?",
+    answerOptions: ["Rogers Park", "Hyde Park", "Jefferson Park", "Logan Square"],
+    correctAnswer: "Hyde Park",
+    name: "q8"
 }
 
-
+console.log(question1);
+console.log(question2.question);
 
 // player hits start
 // a question pops up 
@@ -104,13 +97,13 @@ var q8 = {
 
 var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
     //click events
-    $("#start").on("click", run);
+    $("#start").on("click", playTrivia);
     $("#start").on("click", decrement);
     $("#submit").on("click", grade);
     $("#submit").on("click", done);
     $("#submit").on("click", displayResults);
 
-    function run() {
+    function playTrivia() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
         $("#start").hide();

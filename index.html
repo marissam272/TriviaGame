@@ -1,18 +1,167 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chicago Trivia!</title>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">    
+    <link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    </script>
+
+    <title>Chicago Trivia!</title>
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">     -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Philosopher" rel="stylesheet"> -->
 </head>
   <body>
 
+    <h1>Chicago Trivia!</h1>
+
+        <button type="button" id="start" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Start
+        </button>
+
+        <div id="theForm">
+                <div id="time"></div>
+                <form>
+                    <h3>1. Chicago has 77 neighborhoods.</h3>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" value="True"> True<br>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" value="False">False<br>
+                    </label>
+                </form>
+
+                <form>
+                    <h3>2. Which of the following colors is not one of the El train lines?</h3>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" value="purple">Purple<br>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" value="green"> Green<br>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" value="Red"> Red
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" value="white"> White
+                    </label>
+                </form>
+
+                <form>
+                        <h3>3. Northwestern University is located in which Chicago suburb?</h3>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" value="evanston"> Evanston<br>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" value="wilmette"> Wilmette<br>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" value="skokie"> Skokie
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" value="mtprospect"> Mt Prospect
+                        </label>
+                    </form>
+
+                    <form>
+                        <h3>4. The Cloud Gate statue in downtown Chicago is nicknamed The Bean.</h3>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" value="true2">True<br>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" value="false2"> False<br>
+                        </label>
+                    </form>
+
+                        <form>
+                            <h3>5. What is the tallest building in Chicago?</h3>
+                            <label class="radio-inline">
+                                <input type="radio" name="q5" value="hancock"> Hancock Tower<br>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="q5" value="willis"> Willis Tower, aka Sears Tower<br>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="q5" value="aqua"> Aqua Tower
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="q5" value="trump"> Trump Tower
+                            </label>
+                        </form>
+
+                        <form>
+                                <h3>6. Chicago is located along Lake Superior.</h3>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q6" value="true3"> True<br>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q6" value="false3"> False<br>
+                                </label>
+                        </form>
+
+                        <form>
+                                <h3>7. Lincoln Park Zoo is one of the few free-admission zoos in the United States.</h3>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q7" value="true4"> True<br>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q7" value="false4"> False<br>
+                                </label>
+                        </form>
+
+                        <form>
+                                <h3>8. Former President Barack Obama lived in which Chicago neighborhood?</h3>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q8" value="rogers"> Rogers Park<br>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q8" value="hyde"> Hyde Park<br>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q8" value="jefferson"> Jefferson Park
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="q8" value="logan"> Logan Square
+                                </label>
+                            </form>
+
+                <button type="button" id="submit" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Submit
+                </button>
+
+                </div>
+
+                <div id="result-page">
+                        <h2></h2>
+                        </div>
+
+
+<!-- <div>
+    <h2 id="time-remaining-timer">Time Remaining:  </h2>
+</div>
+
+<div> 
+    <h2 id="question-display">  </h2>
+</div>
+
+<div> 
+    <h2 id="answer-options">   </h2>
+</div>
+
+    <button type="button" id="submit" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Submit
+    </button>
+
+<div> 
+    <h2 id="correct-answer">   </h2>
+</div> -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="app.js"></script>
+        <script src="assets/javascript/tomapp.js"></script>
     
     </body>
     </html>
