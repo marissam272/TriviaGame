@@ -141,11 +141,11 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
         for (var i = 0; i < questions.length; i++) {
             var correctAnswer = questions[i].correct;
             var questionName = questions[i].name;
-            var selected = $('input[type="radio"][name=' + questionName + ']:checked').val();
-            if (selected === undefined) {
-                noAnswer++;
+            // var selected = $('input[type="radio"][name=' + questionName + ']:checked').val();
+            if ($("input[name=q1]:checked").val() == "correct"){
+            right++; 
             } else if (selected === correctAnswer) {
-                right++;
+                noAnswer++;;
             } else {
                 wrong++;
             }
