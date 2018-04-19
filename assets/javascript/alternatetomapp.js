@@ -2,11 +2,12 @@ $(document).ready(function() {
     $("#theForm").hide();
     $("#result-page").hide();
     
-    var number = 60;
+    var number = 30;
     var intervalId;
     var right = 0;
     var wrong = 0;
     var noAnswer = 0;
+    var count = 0;
 
 
 // questions/answers
@@ -74,21 +75,47 @@ var q8 = {
     image: "assets/images/obamashouse.jpg"
 }
 
+var images = ["assets/images/aerialview.jpg", "assets/images/brownline.jpg", "assets/images/northwestern.jpg", "assets/images/the-bean.jpg", "assets/images/skyline.jpg", "assets/images/alongthelake.jpg", "assets/images/lincolnparkzoo.jpg", "assets/images/obamashouse.jpg"]
+
 
 var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
     //click events
     $("#start").on("click", run);
     $("#start").on("click", decrement);
+    $("#next").on("click", );
     $("#submit").on("click", grade);
     $("#submit").on("click", done);
     $("#submit").on("click", displayResults);
+
+    function displayImage() {
+        $("#image-holder").html("<img src=" + images[count] + " width='200px'>");
+      }
 
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
         $("#start").hide();
-        $("#theForm").show();
+        $("#next").show();
+        // $("#theForm").show();
+        for (var j = 0; j < questions.length; j++) {
+            displayImage();
+            function nextImage(displayImage) {
+                //  TODO: Increment the count by 1.
+                count++;
+        }
     }
+
+
+    //   function nextImage(displayImage) {
+    //     //  TODO: Increment the count by 1.
+    //     count++;
+
+    function nextQuestion() {
+        $("#question1").show;
+        //  TODO: Increment the count by 1.
+        count++;
+      
+      }
 
     function decrement() {
         number--;
@@ -131,8 +158,6 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
         $("#theForm").hide();
         $("#result-page").show();
         $("#result-page").html("<button id='game_over'>" + "Game Over" + "</button>");
-        //if desired throw in a pause
-        // $('#yes-audio').trigger("pause");
         stop();
     }
 
