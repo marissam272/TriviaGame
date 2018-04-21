@@ -2,6 +2,7 @@ $(document).ready(function() {
     $("#theForm").hide();
     $("#result-page").hide();
     
+    // variables for later
     var number = 60;
     var intervalId;
     var right = 0;
@@ -110,6 +111,7 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
     $("#submit").on("click", done);
     $("#submit").on("click", displayResults);
 
+    // to run the game
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
@@ -117,6 +119,7 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
         $("#theForm").show();
     }
 
+    // function to decrease seconds in timer
     function decrement() {
         number--;
       //  Show the number in the #time tag.
@@ -125,6 +128,7 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
             $("#theForm").hide();
             grade();
 
+            // results at end of game
             displayResults(event);
             event.preventDefault();
             $("#result-page").show();
@@ -136,11 +140,12 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
         }
     }
 
+    // function to add scores - tried a couple methods but neither worked :/
     function grade(event){
         event.preventDefault();
         for (var i = 0; i < questions.length; i++) {
-            var correctAnswer = questions[i].correct;
-            var questionName = questions[i].name;
+            // var correctAnswer = questions[i].correct;
+            // var questionName = questions[i].name;
             if ($("input[name=q1]:checked").val() === "correct"){
                 right++; 
                 } else {
@@ -172,7 +177,7 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
         $("#result-page").append("<h4 class='make-lower'>" + "<span>" + "correct answers: " + right + "</span>" + "</h4>");
         $("#result-page").append("<h4>" + "incorrect answers: " + wrong + "</h4>");
         $("#result-page").append("<h4>" + "missed questions: " + noAnswer+ "</h4>");
-        if(right > 3){
+        if(right > 5){
             $("#result-page").append("<h2>" + "Awesome!" + "</h2>");
 
         } else {
@@ -186,6 +191,7 @@ var questions = [q1, q2, q3, q4, q5, q6, q7, q8];
         });
     };
 
+    // restart after game
     function reload(){
         var number = 30;
         $("#theForm").hide();
