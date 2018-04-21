@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+}
+
+.container {
+    background-color: red;
+   color: white;
+   width: auto;
+   text-align: center;
+}
+
+form {
+    border: gray solid 2px;
+    margin: 10px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+}
+
